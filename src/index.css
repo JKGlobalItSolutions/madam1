@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-maroon: #6d251b;
+  --color-maroon-dark: #4a1711;
+  --color-gold: #c58a32;
+  --color-gold-light: #e3b765;
+  --color-cream: #f7f0e3;
+  --color-forest: #334a36;
+  --color-royal: #1b3a8c;
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Poppins", sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-cream);
+  color: #2b1d17;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 { font-family: var(--font-heading); }
+
+:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* One orchestrated moment: the hero content rises in once on page load */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-rise { animation: rise 0.9s ease-out both; }
+.hero-rise-delay { animation: rise 0.9s ease-out 0.25s both; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-rise, .hero-rise-delay { animation: none; }
+}
+
+/* Gold double border used on framed photos and cards */
+.gold-frame {
+  border: 2px solid var(--color-gold);
+  outline: 1px solid var(--color-gold);
+  outline-offset: 4px;
+}
+
+/* Arrows that nudge sideways to show that a row or card can be clicked */
+@keyframes nudge {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+.nudge { animation: nudge 1.4s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .nudge { animation: none; } }
+
+/* Anchor links (such as #sponsor) stop below the sticky header */
+[id] { scroll-margin-top: 6rem; }
