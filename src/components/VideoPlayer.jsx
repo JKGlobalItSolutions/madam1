@@ -6,11 +6,11 @@ function youtubeId(input = '') {
   return /^[A-Za-z0-9_-]{11}$/.test(input) ? input : ''
 }
 
-export default function VideoPlayer({ title, youtube, src, poster }) {
+export default function VideoPlayer({ title, youtube, src, poster, portrait = false }) {
   const id = youtubeId(youtube)
   return (
     <figure>
-      <div className="gold-frame rounded-lg overflow-hidden bg-black aspect-video">
+      <div className={`gold-frame rounded-lg overflow-hidden bg-black ${portrait ? 'aspect-[9/16] max-w-xs mx-auto' : 'aspect-video'}`}>
         {id ? (
           <iframe
             className="w-full h-full"

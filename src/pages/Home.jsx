@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
 import Welcome from '../components/Welcome'
 import EventsBand from '../components/EventsBand'
+import ThapovanamSection from '../components/ThapovanamSection'
 import Button from '../components/Button'
 import SectionTitle from '../components/SectionTitle'
 import ServiceCard from '../components/ServiceCard'
@@ -227,6 +228,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ThapovanamSection />
 
       {/* Gallery: five separate galleries */}
       <section className="py-20 bg-white">
