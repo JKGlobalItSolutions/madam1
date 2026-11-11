@@ -17,7 +17,7 @@ export default function Navbar() {
     `text-sm font-medium transition-colors ${isActive ? 'text-gold' : 'text-cream hover:text-gold-light'}`
 
   return (
-    <header className="sticky top-0 z-50 bg-maroon-dark border-b-2 border-gold">
+    <header className="relative bg-maroon-dark border-b-2 border-gold">
       <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 min-w-0">
           <img src={SITE.logo} alt={`${SITE.name} logo`} className="w-14 h-14 rounded-full object-cover shrink-0" />
@@ -70,7 +70,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <nav className="lg:hidden bg-maroon-dark border-t border-gold/40 max-h-[calc(100vh-5rem)] overflow-y-auto" aria-label="Mobile">
+        <nav className="lg:hidden bg-maroon-dark border-t border-gold/40 max-h-[calc(100vh-8rem)] overflow-y-auto" aria-label="Mobile">
           <ul className="px-4 py-3">
             {NAV_LINKS.map((item) => (
               <li key={item.label} className="border-b border-cream/10">

@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
+import TopBar from './components/TopBar'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
@@ -40,7 +41,11 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
-      <Navbar />
+      {/* Gold "200 Years" strip and the menu stay together at the top while scrolling */}
+      <div className="sticky top-0 z-50">
+        <TopBar />
+        <Navbar />
+      </div>
       <main>
         <Routes>
           <Route path="/" element={<Home />} />

@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import { IMG } from '../data/images'
 import { SITE } from '../data/site'
 
-// Shown right after the hero: logo on the left, welcome text in the middle, large Madam photo on the right.
+// Shown right after the hero: logo on the left, welcome text + Annamalaiyar photo in the middle, large Madam photo on the right.
+// The name "Sri Pavalakundru Madalayam" runs across continuously (marquee, see index.css).
 // Everything fades in when the section scrolls into view.
 export default function Welcome() {
   const ref = useRef(null)
@@ -59,14 +60,40 @@ export default function Welcome() {
           <img src={IMG.logo} alt={`${SITE.name} emblem`} className="w-full h-full rounded-full object-cover" />
         </div>
 
-        {/* Middle: welcome text */}
-        <div className={reveal('translate-y-6', 'delay-300')}>
+        {/* Middle: welcome text, running name, Annamalaiyar photo */}
+        <div className={`w-full min-w-0 ${reveal('translate-y-6', 'delay-300')}`}>
           <h2 className="font-semibold">
-            <span className="block font-body text-lg md:text-xl font-medium text-gold-light">Welcome to</span>
-            <span className="block mt-1 text-3xl md:text-4xl xl:text-5xl leading-tight">{SITE.name}</span>
+            <span className="sr-only">Welcome to {SITE.name}</span>
+            <span aria-hidden="true" className="block font-body text-lg md:text-xl font-medium text-gold-light">Welcome to</span>
           </h2>
+
+          {/* Name keeps running from right to left; hover pauses it */}
+          <div className="marquee mt-3" aria-hidden="true">
+            <div className="marquee-track font-heading font-semibold text-3xl md:text-4xl xl:text-5xl leading-tight">
+              {[0, 1].map((i) => (
+                <span key={i} className="marquee-item">
+                  {SITE.name}
+                  <span className="marquee-sep text-gold-light">&#10022;</span>
+                </span>
+              ))}
+            </div>
+          </div>
+
           <div className="h-0.5 w-24 bg-gold mx-auto mt-5" />
           <p className="mt-5 text-cream/85">{SITE.tagline}</p>
+
+          <figure className={`mx-auto mt-8 w-full max-w-[22rem] ${reveal('scale-90 translate-y-6', 'delay-700')}`}>
+            <img
+              src={IMG.annamalaiyar}
+              alt="Sri Annamalaiyar and Sri Unnamulaiyammai of Tiruvannamalai"
+              className="deity-glow gold-frame w-full rounded-xl"
+            />
+            <figcaption className="mt-4 flex items-center justify-center gap-2 whitespace-nowrap text-[13px] tracking-wide text-gold-light sm:text-sm">
+              <span className="h-px w-5 shrink-0 bg-gold/70" aria-hidden="true" />
+              Sri Annamalaiyar &amp; Sri Unnamulaiyammai
+              <span className="h-px w-5 shrink-0 bg-gold/70" aria-hidden="true" />
+            </figcaption>
+          </figure>
         </div>
 
         {/* Right: large Madam photo */}

@@ -57,4 +57,45 @@ h1, h2, h3, h4 { font-family: var(--font-heading); }
 @media (prefers-reduced-motion: reduce) { .nudge { animation: none; } }
 
 /* Anchor links (such as #sponsor) stop below the sticky header */
-[id] { scroll-margin-top: 6rem; }
+[id] { scroll-margin-top: 9rem; }
+
+/* Blinking highlight used by the "200 Years" strip at the top of every page */
+@keyframes topbar-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+.topbar-blink { animation: topbar-blink 1.3s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .topbar-blink { animation: none; } }
+
+/* Welcome section: the name runs across continuously */
+.marquee {
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-run 14s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+.marquee-item { display: inline-flex; align-items: center; white-space: nowrap; }
+.marquee-sep { margin: 0 1.75rem; font-size: 0.6em; }
+@keyframes marquee-run {
+  to { transform: translateX(-50%); }
+}
+/* Reduce-motion visitors: show the name still, centred */
+@media (prefers-reduced-motion: reduce) {
+  .marquee { mask-image: none; -webkit-mask-image: none; }
+  .marquee-track { animation: none; width: auto; justify-content: center; flex-wrap: wrap; }
+  .marquee-item:nth-child(2), .marquee-sep { display: none; }
+}
+
+/* Soft pulsing glow around the Annamalaiyar photo */
+@keyframes deity-glow {
+  0%, 100% { box-shadow: 0 0 24px rgba(227, 183, 101, 0.30); }
+  50% { box-shadow: 0 0 56px rgba(227, 183, 101, 0.65); }
+}
+.deity-glow { animation: deity-glow 3s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .deity-glow { animation: none; } }

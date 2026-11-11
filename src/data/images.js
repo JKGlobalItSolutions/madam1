@@ -10,6 +10,8 @@ import annadhanamHall from '../assets/images/annadhanam-hall.jpg'
 import entranceArch from '../assets/images/entrance-arch.jpg'
 import front from '../assets/images/madalayam-front.jpg'
 import heroGurus from '../assets/images/hero-gurus.jpg'
+import welcomeBanner from '../assets/images/welcome-banner.jpg'
+import annamalaiyar from '../assets/images/annamalaiyar-unnamulaiyammai.jpg'
 
 import maheshwaraAnnadhanam from '../assets/images/gallery/maheshwara-annadhanam.jpg'
 import padapooja from '../assets/images/gallery/padapooja.jpg'
@@ -44,10 +46,14 @@ import roomDoorway from '../assets/images/room-doorway.jpg'
 import swamijiMealPrayer from '../assets/images/gallery/swamiji-meal-prayer.jpg'
 import santasAnnadhanam1 from '../assets/images/gallery/santas-annadhanam-1.jpg'
 import santasAnnadhanam2 from '../assets/images/gallery/santas-annadhanam-2.jpg'
+import santasAnnadhanam3 from '../assets/images/gallery/santas-annadhanam-3.jpg'
+import santasAnnadhanam4 from '../assets/images/gallery/santas-annadhanam-4.jpg'
 import roomDoor from '../assets/images/room-door.jpg'
 
 export const IMG = {
-  swamijiMealPrayer, santasAnnadhanam1, santasAnnadhanam2, roomDoor,
+  welcomeBanner,
+  annamalaiyar,
+  swamijiMealPrayer, santasAnnadhanam1, santasAnnadhanam2, santasAnnadhanam3, santasAnnadhanam4, roomDoor,
   madamArch,
   contactOffice,
   aboutMadam, cowShed, gosala, samadhiEntrance, samadhiShrine, samadhiHall,

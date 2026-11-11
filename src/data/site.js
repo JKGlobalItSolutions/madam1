@@ -6,6 +6,9 @@ import { GALLERIES } from './gallery'
 export const SITE = {
   name: 'Sri Pavalakundru Madalayam', // spelling as on logo: confirm with client
   tagline: 'Tiruvannamalai Divya Kshetram, Tamil Nadu',
+  // Blinking "200 Years" strip at the top of every page (TopBar.jsx).
+  // TODO (client): an earlier note said "more than 15 decades" (150 years). Confirm 200 before launch.
+  yearsOfService: 200,
   phone: '6379280613',
   phone2: '9443733320',
   whatsapp: '916379280613', // country code + number, no + sign
@@ -22,7 +25,7 @@ export const SITE = {
     ifsc: 'KVBL0001198',
   },
   // TODO: name and role of the person in the contact photo (shown under the photo when filled)
-  contactPerson: { name: '', role: '' },
+  contactPerson: { name: 'Ravi', role: 'Head, Pavalakundru Madalayam' },
   // TODO: paste the full page links here when ready, e.g. 'https://www.instagram.com/yourpage'
   social: { instagram: '', youtube: '', facebook: '' },
   logo: IMG.logo,

@@ -1,4 +1,3 @@
-import { Utensils, HandHeart, Heart } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero'
 import SectionTitle from '../components/SectionTitle'
@@ -13,6 +12,15 @@ const sponsorship = [
   { title: 'Sponsor one day Annadhanam', text: 'Support the food service for a day, in your name or in memory of a loved one.' },
   { title: 'Monthly sponsorship', text: 'Contribute regularly so that Annadhanam continues through the month.' },
   { title: 'General contribution', text: 'Give any amount towards Annadhanam and devotional services.' },
+]
+
+const ANNADHANAM_PHOTOS = [
+  { src: IMG.maheshwaraAnnadhanam, alt: 'Devotees being served Annadhanam on banana leaves', pos: 'center 50%' },
+  { src: IMG.santasAnnadhanam1, alt: 'Santas seated with banana leaf meals in the Annadhanam hall', pos: 'center 55%' },
+  { src: IMG.santasAnnadhanam2, alt: 'Santas and devotees during Annadhanam', pos: 'center 50%' },
+  { src: IMG.swamijiMealPrayer, alt: 'Swamiji offering prayer before the meal', pos: 'center 50%' },
+  { src: IMG.santasAnnadhanam3, alt: 'Santas and devotees being served in the Annadhanam hall', pos: 'center 50%' },
+  { src: IMG.santasAnnadhanam4, alt: 'Santas seated with banana leaf meals, ready for Annadhanam', pos: 'center 50%' },
 ]
 
 export default function Annadhanam() {
@@ -40,6 +48,22 @@ export default function Annadhanam() {
           </div>
           <img src={IMG.annadhanamHall} alt="Annadhanam hall at the Madalayam" className="gold-frame mt-12 w-full rounded-lg" />
 
+          {/* Photos: same ones as the Annadhanam section on the Home page, plus new ones */}
+          <div className="mt-14">
+            <h3 className="text-2xl md:text-3xl text-maroon font-semibold text-center mb-8">Annadhanam at the Madalayam</h3>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {ANNADHANAM_PHOTOS.map((p) => (
+                <img
+                  key={p.src}
+                  src={p.src}
+                  alt={p.alt}
+                  style={{ objectPosition: p.pos }}
+                  className="gold-frame rounded-lg w-full aspect-[4/3] object-cover"
+                />
+              ))}
+            </div>
+          </div>
+
           {MAHESHWARA_POOJA_VIDEOS.length > 0 && (
             <div className="mt-14">
               <h3 className="text-2xl md:text-3xl text-maroon font-semibold text-center mb-8">Maheshwara Pooja Videos</h3>
@@ -50,24 +74,6 @@ export default function Annadhanam() {
               </div>
             </div>
           )}
-        </div>
-      </section>
-
-      <section className="py-16 bg-maroon text-cream">
-        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-6">
-          {[
-            { icon: Utensils, title: 'Daily Annadhanam', text: 'Food service for devotees.' },
-            { icon: HandHeart, title: 'Sponsor Annadhanam', text: "Support a day's food service." },
-            { icon: Heart, title: 'Devotional Service', text: 'Take part in a tradition of giving.' },
-          ].map(({ icon: Icon, title, text }) => (
-            <div key={title} className="rounded-lg border border-gold/60 bg-maroon-dark/60 p-7 text-center">
-              <div className="w-14 h-14 mx-auto rounded-full bg-gold text-maroon-dark flex items-center justify-center mb-4">
-                <Icon size={26} />
-              </div>
-              <h3 className="text-xl text-gold-light">{title}</h3>
-              <p className="mt-2 text-sm text-cream/85">{text}</p>
-            </div>
-          ))}
         </div>
       </section>
 

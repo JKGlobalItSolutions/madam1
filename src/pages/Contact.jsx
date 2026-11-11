@@ -55,9 +55,11 @@ export default function Contact() {
                 className="gold-frame w-full rounded-lg aspect-[16/10] object-cover object-top"
               />
               {SITE.contactPerson.name && (
-                <figcaption className="mt-4 text-sm text-stone-700">
-                  <span className="font-semibold text-maroon">{SITE.contactPerson.name}</span>
-                  {SITE.contactPerson.role && `, ${SITE.contactPerson.role}`}
+                <figcaption className="mt-4 text-center">
+                  <span className="block font-heading text-xl font-semibold text-maroon">{SITE.contactPerson.name}</span>
+                  {SITE.contactPerson.role && (
+                    <span className="mt-0.5 block text-sm font-medium tracking-wide text-stone-700">{SITE.contactPerson.role}</span>
+                  )}
                 </figcaption>
               )}
             </figure>

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { IMG } from '../data/images'
 import { GURUS } from '../data/gurus'
 
-// The photo is trimmed to a wide shape (about 2.04 : 1) so both swamigal stay fully seated and the
+// The photo is a 16 : 9 picture (1600 x 900) so both swamigal stay fully seated and the
 // image fills the whole width with no side gaps. The heading is centred between them and each
 // swamiji's name sits under him (left = first in GURUS, right = second). Each name opens that biography.
 // On phones and tablets (below 1024px) the photo is on top, then the text and the two names.
@@ -25,12 +25,12 @@ export default function Hero() {
     <section className="bg-maroon-dark border-b-4 border-gold">
       <div
         className="relative lg:h-(--hero-h) lg:min-h-[440px]"
-        style={{ '--hero-h': 'min(48.9vw, calc(100vh - 4rem))' }}
+        style={{ '--hero-h': 'min(56.25vw, calc(100vh - 7.5rem))' }}
       >
         <img
           src={IMG.heroGurus}
           alt="Sri Tiruchi Mahaswamigal and Sri Jayendra Puri Mahaswamiji seated in front of the Arunachala hill"
-          className="w-full h-auto lg:absolute lg:inset-0 lg:h-full lg:object-cover lg:object-[center_65%]"
+          className="w-full h-auto lg:absolute lg:inset-0 lg:h-full lg:object-cover lg:object-[center_45%]"
         />
         {/* Soft dark centre so the heading stays readable over the hill */}
         <div
@@ -43,7 +43,7 @@ export default function Hero() {
         {GURUS.map((g, i) => (
           <div
             key={g.slug}
-            className={`hidden lg:block absolute z-10 bottom-[5%] -translate-x-1/2 w-[min(19vw,17rem)] ${i === 0 ? 'left-[21%]' : 'left-[82%]'}`}
+            className={`hidden lg:block absolute z-10 bottom-[5%] -translate-x-1/2 w-[min(24vw,21rem)] ${i === 0 ? 'left-[24%]' : 'left-[77%]'}`}
           >
             <NamePlate guru={g} />
           </div>

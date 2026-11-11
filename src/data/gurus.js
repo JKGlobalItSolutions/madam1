@@ -33,8 +33,8 @@ export const GURUS = [
     slug: 'jayendra-puri-swamigal',
     biographyPath: '/biography/jayendra-puri-swamigal',
     galleryPath: '/gallery/jayendra-puri-swamigal',
-    name: 'Sri Jayendra Puri Mahaswamiji',
-    shortName: 'Jayendra Puri Swamigal',
+    name: 'Sri Sri Sri Jayendra Puri Mahaswamiji',
+    shortName: 'Sri Sri Sri Jayendra Puri Swamigal',
     role: 'Peethadhipathi, Sri Kailash Ashrama Mahasamsthana',
     image: IMG.jayendra,
     summary:

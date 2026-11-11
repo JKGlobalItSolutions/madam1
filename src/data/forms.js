@@ -57,3 +57,10 @@ export const CONTACT_FIELDS = [
   { name: 'email', label: 'Email', type: 'email', full: true },
   { name: 'message', label: 'Message', type: 'textarea', required: true },
 ]
+
+// Short message box on the Home page events band (sent with the Contact template)
+export const EVENTS_MESSAGE_FIELDS = [
+  { name: 'name', label: 'Name', type: 'text', required: true },
+  { name: 'phone', label: 'Mobile number', type: 'tel', required: true, placeholder: '10-digit number' },
+  { name: 'message', label: 'Message', type: 'textarea', required: true, placeholder: 'Ask about the next programme' },
+]
